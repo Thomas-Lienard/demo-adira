@@ -1,0 +1,21 @@
+{
+  "id": "TK-0005",
+  "type": "ticket",
+  "metadata": {
+    "date": "2025-09-17",
+    "client": "AquaPure Ann-37",
+    "region": "Lyon",
+    "categorie": "support_technique"
+  },
+  "raw_text": "TICKET SERVICE CLIENT #0005\n=====================================\nDate d'ouverture : 2025-09-17\nClient : AquaPure Ann-37\nRegion : Lyon\nCategorie : support_technique\nSeverite : critique\nProduit concerne : Produit Equ-1\n\n--- HISTORIQUE DU TICKET ---\n\n[2025-09-17 09:15] Client (AquaPure Ann-37) :\nBonjour, je vous contacte car nous avons un probleme technique avec Produit Equ-1. L'equipement ne fonctionne plus correctement depuis la derniere mise a jour. Nos techniciens ont essaye plusieurs procedures de depannage sans succes. On a besoin d'une intervention rapide.\n\n[2025-09-17 10:30] Support (Equipe SAV) :\nBonjour, nous avons bien recu votre demande et nous la traitons en priorite critique.\nNous planifions une intervention technique sur site dans les 48h. En attendant, veuillez debrancher l'equipement pour eviter tout dommage supplementaire.\n\n[2025-09-21 14:22] Client (AquaPure Ann-37) :\nMerci pour le retour mais ce n'est pas suffisant. J'ai besoin de garanties que ca ne se reproduira plus. On evalue serieusement des alternatives fournisseur.\n\n[2025-09-20 16:00] Support (Equipe SAV) : Ticket resolu. Le client AquaPure Ann-37 rencontre un probleme technique avec Produit Equ-1. Assistance demandee.\n\n--- FIN DU TICKET ---\n\nMetriques internes :\n- Temps de premiere reponse : 1h15\n- Temps de resolution : 3 jours\n- Satisfaction client post-resolution : tres mecontent\n- Escalade manager : oui\n- Impact business estime : critique\n",
+  "extracted_fields": {
+    "date_creation": "2025-09-17",
+    "client": "AquaPure Ann-37",
+    "categorie_probleme": "support_technique",
+    "produit_concerne": "Produit Equ-1",
+    "severite": "critique",
+    "delai_resolution_jours": 3,
+    "sentiment_client": "tres mecontent",
+    "resume": "Le client AquaPure Ann-37 rencontre un probleme technique avec Produit Equ-1. Assistance demandee."
+  }
+}

@@ -1,0 +1,201 @@
+metrics:
+  chiffre_affaires:
+    label: "Chiffre d'affaires"
+    description: "Somme des montants des lignes de commande validees"
+    sql: "SUM(lc.montant_ligne)"
+    unit: "EUR"
+    concepts: [Commande, LigneCommande, Client, Region]
+    synonyms: ["CA", "revenue", "chiffre d'affaires", "turnover", "ventes", "recette"]
+
+  nombre_commandes:
+    label: "Nombre de commandes"
+    description: "Nombre total de commandes passees"
+    sql: "COUNT(DISTINCT c.commande_id)"
+    unit: "commandes"
+    concepts: [Commande, Client]
+    synonyms: ["volume de commandes", "orders", "nombre de ventes"]
+
+  panier_moyen:
+    label: "Panier moyen"
+    description: "Montant moyen par commande"
+    sql: "SUM(lc.montant_ligne) / NULLIF(COUNT(DISTINCT c.commande_id), 0)"
+    unit: "EUR"
+    concepts: [Commande, LigneCommande]
+    synonyms: ["panier moyen", "montant moyen par commande", "average order value"]
+
+  taux_atteinte_objectif:
+    label: "Taux d'atteinte objectif"
+    description: "Pourcentage du CA reel par rapport a l'objectif trimestriel de la region"
+    sql: "ROUND(SUM(lc.montant_ligne) * 100.0 / MAX(r.objectif_q3), 1)"
+    unit: "%"
+    concepts: [Region, Commande, LigneCommande]
+    synonyms: ["atteinte objectif", "performance vs objectif", "taux de realisation"]
+
+  ca_par_commercial:
+    label: "CA par commercial"
+    description: "Chiffre d'affaires ventile par commercial"
+    sql: "SUM(lc.montant_ligne)"
+    unit: "EUR"
+    concepts: [Commercial, Commande, LigneCommande]
+    synonyms: ["performance commerciale", "ventes par commercial"]
+
+  delai_paiement_moyen:
+    label: "Delai de paiement moyen"
+    description: "Nombre moyen de jours entre la date de facture et la date de paiement"
+    sql: "AVG(DATE_DIFF('day', f.date_facture, p.date_paiement))"
+    unit: "jours"
+    concepts: [Facture, Paiement]
+    synonyms: ["DSO", "delai de paiement", "days sales outstanding"]
+
+  taux_impaye:
+    label: "Taux d'impayes"
+    description: "Pourcentage de factures non payees"
+    sql: "ROUND(COUNT(CASE WHEN f.est_payee = false THEN 1 END) * 100.0 / NULLIF(COUNT(*), 0), 1)"
+    unit: "%"
+    concepts: [Facture]
+    synonyms: ["impayes", "factures en retard", "taux de recouvrement"]
+
+  taux_mention_concurrent:
+    label: "Taux de mention concurrent"
+    description: "Pourcentage d'appels commerciaux ayant cite un concurrent specifique"
+    sql: "ROUND(COUNT(CASE WHEN a.concurrent_cite IS NOT NULL AND a.concurrent_cite != '' THEN 1 END) * 100.0 / NULLIF(COUNT(*), 0), 1)"
+    unit: "%"
+    concepts: [AppelCommercial]
+    synonyms: ["mentions concurrents", "veille concurrentielle appels"]
+
+  sentiment_appels:
+    label: "Repartition sentiment appels"
+    description: "Distribution du sentiment detecte dans les appels commerciaux"
+    sql: "COUNT(*)"
+    unit: "appels"
+    concepts: [AppelCommercial]
+    synonyms: ["sentiment commercial", "tonalite appels"]
+
+  volume_tickets:
+    label: "Volume de tickets"
+    description: "Nombre de tickets service client"
+    sql: "COUNT(*)"
+    unit: "tickets"
+    concepts: [TicketClient]
+    synonyms: ["tickets", "reclamations", "plaintes", "problemes clients"]
+
+dimensions:
+  par_region:
+    label: "Par region"
+    group_by: "r.nom_region"
+    concepts: [Region]
+    synonyms: ["par region", "regional", "geographique"]
+
+  par_commercial:
+    label: "Par commercial"
+    group_by: "com.nom_commercial"
+    concepts: [Commercial]
+    synonyms: ["par commercial", "par vendeur"]
+
+  par_trimestre:
+    label: "Par trimestre"
+    group_by: "CONCAT('Q', CAST(QUARTER(c.date_commande) AS VARCHAR), ' ', CAST(YEAR(c.date_commande) AS VARCHAR))"
+    order_by: "MIN(c.date_commande)"
+    concepts: [Commande]
+    synonyms: ["par trimestre", "trimestriel", "quarter"]
+
+  par_mois:
+    label: "Par mois"
+    group_by: "DATE_FORMAT(c.date_commande, '%Y-%m')"
+    order_by: "DATE_FORMAT(c.date_commande, '%Y-%m')"
+    concepts: [Commande]
+    synonyms: ["par mois", "mensuel", "monthly"]
+
+  par_client:
+    label: "Par client"
+    group_by: "cl.nom_client"
+    concepts: [Client]
+    synonyms: ["par client", "par compte"]
+
+  par_segment:
+    label: "Par segment"
+    group_by: "cl.segment"
+    concepts: [Client]
+    synonyms: ["par segment", "PME ETI Grand Compte"]
+
+  par_produit:
+    label: "Par produit"
+    group_by: "pr.nom_produit"
+    concepts: [Produit]
+    synonyms: ["par produit", "par article"]
+
+  par_categorie:
+    label: "Par categorie produit"
+    group_by: "pr.categorie"
+    concepts: [Produit]
+    synonyms: ["par categorie", "par famille de produit"]
+
+  par_concurrent:
+    label: "Par concurrent cite"
+    group_by: "a.concurrent_cite"
+    concepts: [AppelCommercial]
+    synonyms: ["par concurrent", "concurrents"]
+
+  par_categorie_probleme:
+    label: "Par categorie de probleme"
+    group_by: "t.categorie_probleme"
+    concepts: [TicketClient]
+    synonyms: ["par type de probleme", "par categorie de ticket"]
+
+query_patterns:
+  comparaison:
+    description: "Comparaison ou repartition entre entites"
+    triggers: ["quel", "comparer", "repartition", "versus", "vs", "par rapport"]
+    behavior: "Agreger des totaux, regrouper par la dimension demandee"
+
+  evolution:
+    description: "Tendance temporelle"
+    triggers: ["tendance", "evolution", "depuis", "historique", "trimestre", "mois"]
+    behavior: "GROUP BY periode temporelle, ORDER BY date"
+
+  classement:
+    description: "Top ou bottom N"
+    triggers: ["top", "meilleur", "pire", "classement", "premiers", "derniers"]
+    behavior: "GROUP BY entite, ORDER BY metrique DESC/ASC, LIMIT N"
+
+  diagnostic:
+    description: "Question de type pourquoi, necessite croisement de sources"
+    triggers: ["pourquoi", "raison", "expliquer", "cause", "comment se fait"]
+    behavior: "Croiser donnees structurees ET tables extraites (appels, tickets) pour fournir des explications qualitatives"
+
+  valeur_unique:
+    description: "Un chiffre precis"
+    triggers: ["quel est", "combien", "total"]
+    behavior: "Retourner une valeur scalaire"
+
+business_rules:
+  - name: "CA = commandes validees uniquement"
+    description: "Le chiffre d'affaires ne compte que les commandes dont le statut est 'validee'"
+    filter: "c.statut = 'validee'"
+
+  - name: "Annee fiscale = annee civile"
+    description: "L'annee fiscale correspond a l'annee calendaire"
+    filter: ""
+
+  - name: "Q3 2025 = juillet a septembre"
+    description: "Le troisieme trimestre 2025 couvre du 1er juillet au 30 septembre 2025"
+    filter: "c.date_commande >= DATE '2025-07-01' AND c.date_commande < DATE '2025-10-01'"
+
+  - name: "Segments client"
+    description: "Trois segments : PME (< 50M CA), ETI (50-500M), Grand Compte (> 500M)"
+    filter: ""
+
+table_aliases:
+  c: "iceberg.demo_adira_gold.commandes"
+  lc: "iceberg.demo_adira_gold.lignes_commande"
+  cl: "iceberg.demo_adira_gold.clients"
+  r: "iceberg.demo_adira_gold.regions"
+  com: "iceberg.demo_adira_gold.commerciaux"
+  f: "iceberg.demo_adira_gold.factures"
+  p: "iceberg.demo_adira_gold.paiements"
+  pr: "iceberg.demo_adira_gold.produits"
+  a: "iceberg.demo_adira_gold.appels_commerciaux_extraits"
+  t: "iceberg.demo_adira_gold.tickets_service_client_extraits"
+
+suggested_questions:
+  - "Pourquoi la region Lyon a rate son objectif Q3 ?"

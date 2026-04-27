@@ -1,0 +1,23 @@
+{
+  "id": "TR-0002",
+  "type": "transcription",
+  "metadata": {
+    "date": "2025-07-28",
+    "commercial": "Thomas Martin",
+    "client": "FoodExpress Sai-44",
+    "region": "Lyon"
+  },
+  "raw_text": "TRANSCRIPTION D'APPEL COMMERCIAL\n=================================\nDate : 2025-07-28\nCommercial : Thomas Martin\nClient : FoodExpress Sai-44\nRegion : Lyon\nDuree : 47 minutes\n\n--- DEBUT DE TRANSCRIPTION ---\n\nThomas Martin : Bonjour, c'est Thomas Martin de chez nous. Je vous appelle suite a notre dernier echange\nconcernant le renouvellement de votre contrat annuel. Comment allez-vous aujourd'hui ?\n\nFoodExpress Sai-44 : Bonjour Thomas. Ecoutez, justement je voulais vous en parler.\nOn a recu une proposition de un de vos concurrents la semaine derniere et franchement,\nleurs conditions sont plus interessantes que les votres.\n\nThomas Martin : Je comprends. Pouvez-vous me donner plus de details sur ce qu'ils proposent ?\n\nFoodExpress Sai-44 : Alors principalement, pricing trop eleve vs Acme. Et puis il y a aussi le sujet des delais.\nOn a eu plusieurs retards ces derniers mois, et ca nous pose de vrais problemes en production.\nMon directeur des achats commence a perdre patience.\n\nThomas Martin : Je comprends votre frustration et je prends note de ces points. Concernant les delais,\nnous avons mis en place un nouveau process de suivi logistique depuis le mois dernier qui devrait\nameliorer la situation. Pour les conditions tarifaires, je vais regarder ce qu'on peut faire.\nEst-ce que vous seriez disponible pour un rendez-vous la semaine prochaine ?\n\nFoodExpress Sai-44 : Il faut que ce soit rapide parce qu'on a prevu de prendre une decision d'ici fin du mois.\nLe budget est deja arbitre, et si on ne voit pas d'amelioration concrete de votre cote, on partira\nchez la concurrence. C'est pas de gaite de coeur parce qu'on travaille ensemble depuis\n5 ans, mais la realite economique est ce qu'elle est.\n\nThomas Martin : Je comprends parfaitement. Je vous envoie une proposition revisee d'ici jeudi, et on\nprogramme un point la semaine prochaine pour en discuter. Est-ce que mardi vous conviendrait ?\n\nFoodExpress Sai-44 : Mardi apres-midi ca peut le faire. Mais venez avec du concret, pas juste un PowerPoint.\n\nThomas Martin : Entendu. Merci pour votre franchise, FoodExpress. A mardi.\n\n--- FIN DE TRANSCRIPTION ---\n\nNotes post-appel (Thomas Martin) :\n- Client en phase de comparaison active avec concurrent inconnu\n- Objection principale : pricing trop eleve vs Acme\n- Risque de perte du compte : ELEVE\n- Action : cloture positive\n- Prochaine etape prevue : semaine prochaine\n\nContexte supplementaire :\nCe client represente un CA annuel d'environ 145K EUR. La perte de ce compte\naurait un impact significatif sur les objectifs de la region Lyon. Le commercial note que\nle ton du client s'est durci par rapport aux echanges precedents. La pression concurrentielle\nsur le segment PME dans la region Lyon s'est\nintensifiee depuis le debut de l'annee, en particulier depuis que un concurrent\na lance sa nouvelle offre innovante.\n",
+  "extracted_fields": {
+    "date_appel": "2025-07-28",
+    "commercial": "Thomas Martin",
+    "client": "FoodExpress Sai-44",
+    "duree_minutes": 47,
+    "concurrent_cite": "",
+    "objection_principale": "pricing trop eleve vs Acme",
+    "sentiment": "negatif",
+    "signal_achat": false,
+    "prochaine_etape": "cloture positive",
+    "resume": "Le client FoodExpress Sai-44 compare activement avec la concurrence. Objection principale : pricing trop eleve vs Acme."
+  }
+}

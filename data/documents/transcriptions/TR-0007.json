@@ -1,0 +1,23 @@
+{
+  "id": "TR-0007",
+  "type": "transcription",
+  "metadata": {
+    "date": "2025-08-29",
+    "commercial": "Thomas Martin",
+    "client": "ChimioLab Cle-218",
+    "region": "Lyon"
+  },
+  "raw_text": "TRANSCRIPTION D'APPEL COMMERCIAL\n=================================\nDate : 2025-08-29\nCommercial : Thomas Martin\nClient : ChimioLab Cle-218\nRegion : Lyon\nDuree : 42 minutes\n\n--- DEBUT DE TRANSCRIPTION ---\n\nThomas Martin : Bonjour, c'est Thomas Martin de chez nous. Je vous appelle suite a notre dernier echange\nconcernant le renouvellement de votre contrat annuel. Comment allez-vous aujourd'hui ?\n\nChimioLab Cle-218 : Bonjour Thomas. Ecoutez, justement je voulais vous en parler.\nOn a recu une proposition de Acme Corp la semaine derniere et franchement,\nleurs conditions sont plus interessantes que les votres.\n\nThomas Martin : Je comprends. Pouvez-vous me donner plus de details sur ce qu'ils proposent ?\n\nChimioLab Cle-218 : Alors principalement, pricing trop eleve vs Acme. Et puis il y a aussi le sujet des delais.\nOn a eu plusieurs retards ces derniers mois, et ca nous pose de vrais problemes en production.\nMon directeur des achats commence a perdre patience.\n\nThomas Martin : Je comprends votre frustration et je prends note de ces points. Concernant les delais,\nnous avons mis en place un nouveau process de suivi logistique depuis le mois dernier qui devrait\nameliorer la situation. Pour les conditions tarifaires, je vais regarder ce qu'on peut faire.\nEst-ce que vous seriez disponible pour un rendez-vous la semaine prochaine ?\n\nChimioLab Cle-218 : Il faut que ce soit rapide parce qu'on a prevu de prendre une decision d'ici fin du mois.\nLe budget est deja arbitre, et si on ne voit pas d'amelioration concrete de votre cote, on partira\nchez Acme Corp. C'est pas de gaite de coeur parce qu'on travaille ensemble depuis\n5 ans, mais la realite economique est ce qu'elle est.\n\nThomas Martin : Je comprends parfaitement. Je vous envoie une proposition revisee d'ici jeudi, et on\nprogramme un point la semaine prochaine pour en discuter. Est-ce que mardi vous conviendrait ?\n\nChimioLab Cle-218 : Mardi apres-midi ca peut le faire. Mais venez avec du concret, pas juste un PowerPoint.\n\nThomas Martin : Entendu. Merci pour votre franchise, ChimioLab. A mardi.\n\n--- FIN DE TRANSCRIPTION ---\n\nNotes post-appel (Thomas Martin) :\n- Client en phase de comparaison active avec Acme Corp\n- Objection principale : pricing trop eleve vs Acme\n- Risque de perte du compte : ELEVE\n- Action : escalader au manager\n- Prochaine etape prevue : semaine prochaine\n\nContexte supplementaire :\nCe client represente un CA annuel d'environ 297K EUR. La perte de ce compte\naurait un impact significatif sur les objectifs de la region Lyon. Le commercial note que\nle ton du client s'est durci par rapport aux echanges precedents. La pression concurrentielle\nsur le segment ETI dans la region Lyon s'est\nintensifiee depuis le debut de l'annee, en particulier depuis que Acme Corp\na lance sa nouvelle offre agressivement positionnee en prix.\n",
+  "extracted_fields": {
+    "date_appel": "2025-08-29",
+    "commercial": "Thomas Martin",
+    "client": "ChimioLab Cle-218",
+    "duree_minutes": 42,
+    "concurrent_cite": "Acme Corp",
+    "objection_principale": "pricing trop eleve vs Acme",
+    "sentiment": "negatif",
+    "signal_achat": false,
+    "prochaine_etape": "escalader au manager",
+    "resume": "Le client ChimioLab Cle-218 compare activement avec Acme Corp. Objection principale : pricing trop eleve vs Acme."
+  }
+}

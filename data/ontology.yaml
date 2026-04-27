@@ -1,0 +1,241 @@
+entity_types:
+  Region:
+    table: iceberg.demo_adira_gold.regions
+    description: "Region commerciale avec objectifs trimestriels de chiffre d'affaires"
+    properties:
+      code_region:
+        source: region_code
+        description: "Code unique de la region"
+      nom_region:
+        source: nom_region
+        description: "Nom complet de la region"
+      objectif_q1:
+        source: objectif_q1
+        description: "Objectif CA Q1 en euros"
+      objectif_q2:
+        source: objectif_q2
+        description: "Objectif CA Q2 en euros"
+      objectif_q3:
+        source: objectif_q3
+        description: "Objectif CA Q3 en euros"
+      objectif_q4:
+        source: objectif_q4
+        description: "Objectif CA Q4 en euros"
+
+  Commercial:
+    table: iceberg.demo_adira_gold.commerciaux
+    description: "Commercial terrain affecte a une region"
+    properties:
+      id_commercial:
+        source: commercial_id
+      nom:
+        source: nom_commercial
+      region:
+        source: region_code
+        description: "Region d'affectation"
+      equipe:
+        source: equipe
+      date_embauche:
+        source: date_embauche
+
+  Client:
+    table: iceberg.demo_adira_gold.clients
+    description: "Compte client B2B"
+    properties:
+      id_client:
+        source: client_id
+      nom:
+        source: nom_client
+      ville:
+        source: ville
+      region:
+        source: region_code
+      segment:
+        source: segment
+        description: "PME, ETI ou Grand Compte"
+      statut:
+        source: statut
+      date_creation:
+        source: date_creation
+
+  Commande:
+    table: iceberg.demo_adira_gold.commandes
+    description: "Commande client avec lien vers le commercial et le client"
+    properties:
+      id_commande:
+        source: commande_id
+      client:
+        source: client_id
+      commercial:
+        source: commercial_id
+      date_commande:
+        source: date_commande
+      statut:
+        source: statut
+        description: "validee, annulee, en_cours"
+      devise:
+        source: devise
+
+  LigneCommande:
+    table: iceberg.demo_adira_gold.lignes_commande
+    description: "Ligne de detail d'une commande"
+    properties:
+      commande:
+        source: commande_id
+      produit:
+        source: produit_id
+      quantite:
+        source: quantite
+      prix_unitaire:
+        source: prix_unitaire
+      remise:
+        source: remise_pct
+      montant_ligne:
+        source: montant_ligne
+        description: "Montant net de la ligne"
+
+  Facture:
+    table: iceberg.demo_adira_gold.factures
+    description: "Facture emise suite a une commande"
+    properties:
+      id_facture:
+        source: facture_id
+      commande:
+        source: commande_id
+      date_facture:
+        source: date_facture
+      date_echeance:
+        source: date_echeance
+      montant_total:
+        source: montant_total
+      est_payee:
+        source: est_payee
+
+  Paiement:
+    table: iceberg.demo_adira_gold.paiements
+    description: "Paiement recu sur une facture"
+    properties:
+      id_paiement:
+        source: paiement_id
+      facture:
+        source: facture_id
+      date_paiement:
+        source: date_paiement
+      montant:
+        source: montant
+      methode:
+        source: methode
+
+  Produit:
+    table: iceberg.demo_adira_gold.produits
+    description: "Article du catalogue produit"
+    properties:
+      id_produit:
+        source: produit_id
+      nom:
+        source: nom_produit
+      categorie:
+        source: categorie
+      prix_catalogue:
+        source: prix_catalogue
+
+  AppelCommercial:
+    table: iceberg.demo_adira_gold.appels_commerciaux_extraits
+    description: "Donnees extraites automatiquement des transcriptions d'appels commerciaux par un pipeline IA batch"
+    properties:
+      id_appel:
+        source: appel_id
+      date_appel:
+        source: date_appel
+      commercial:
+        source: commercial
+      client:
+        source: client
+      region:
+        source: region
+      concurrent_cite:
+        source: concurrent_cite
+        description: "Nom du concurrent mentionne durant l'appel"
+      objection_principale:
+        source: objection_principale
+      sentiment:
+        source: sentiment
+        description: "positif, neutre ou negatif"
+      signal_achat:
+        source: signal_achat
+      resume:
+        source: resume
+
+  TicketClient:
+    table: iceberg.demo_adira_gold.tickets_service_client_extraits
+    description: "Donnees extraites automatiquement des tickets du service client par un pipeline IA batch"
+    properties:
+      id_ticket:
+        source: ticket_id
+      date_creation:
+        source: date_creation
+      client:
+        source: client
+      region:
+        source: region
+      categorie_probleme:
+        source: categorie_probleme
+        description: "retard_livraison, qualite_produit, facturation, support_technique"
+      produit_concerne:
+        source: produit_concerne
+      severite:
+        source: severite
+        description: "basse, moyenne, haute, critique"
+      sentiment_client:
+        source: sentiment_client
+      resume:
+        source: resume
+
+relationships:
+  - from: Client
+    to: Region
+    type: "situe dans"
+    cardinality: "N:1"
+  - from: Commercial
+    to: Region
+    type: "affecte a"
+    cardinality: "N:1"
+  - from: Commande
+    to: Client
+    type: "passee par"
+    cardinality: "N:1"
+  - from: Commande
+    to: Commercial
+    type: "geree par"
+    cardinality: "N:1"
+  - from: LigneCommande
+    to: Commande
+    type: "fait partie de"
+    cardinality: "N:1"
+  - from: LigneCommande
+    to: Produit
+    type: "concerne"
+    cardinality: "N:1"
+  - from: Facture
+    to: Commande
+    type: "facture de"
+    cardinality: "1:1"
+  - from: Paiement
+    to: Facture
+    type: "regle"
+    cardinality: "N:1"
+  - from: AppelCommercial
+    to: Commercial
+    type: "realise par"
+    cardinality: "N:1"
+  - from: AppelCommercial
+    to: Client
+    type: "concerne"
+    cardinality: "N:1"
+  - from: TicketClient
+    to: Client
+    type: "ouvert par"
+    cardinality: "N:1"
+
+suggested_questions:
+  - "Pourquoi la region Lyon a rate son objectif Q3 ?"

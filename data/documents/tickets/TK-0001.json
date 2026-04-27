@@ -1,0 +1,21 @@
+{
+  "id": "TK-0001",
+  "type": "ticket",
+  "metadata": {
+    "date": "2025-09-05",
+    "client": "BioPharm Sai-243",
+    "region": "Lyon",
+    "categorie": "qualite_produit"
+  },
+  "raw_text": "TICKET SERVICE CLIENT #0001\n=====================================\nDate d'ouverture : 2025-09-05\nClient : BioPharm Sai-243\nRegion : Lyon\nCategorie : qualite_produit\nSeverite : moyenne\nProduit concerne : Produit Ser-21\n\n--- HISTORIQUE DU TICKET ---\n\n[2025-09-05 09:15] Client (BioPharm Sai-243) :\nBonjour, je vous contacte car nous avons un probleme avec le produit Produit Ser-21 que nous avons recu. Apres inspection, plusieurs unites presentent des defauts de fabrication. Les tolerances ne sont pas respectees et nos equipes qualite ont rejete le lot. On ne peut pas utiliser ca en production.\n\n[2025-09-05 10:30] Support (Equipe SAV) :\nBonjour, nous avons bien recu votre demande et nous la traitons en priorite moyenne.\nNous allons organiser un retour du lot defectueux et lancer un remplacement en priorite. Un responsable qualite vous contactera demain.\n\n[2025-09-06 14:22] Client (BioPharm Sai-243) :\nOK merci pour la prise en charge rapide. J'attends votre retour.\n\n[En cours] Ticket toujours ouvert.\n\n--- FIN DU TICKET ---\n\nMetriques internes :\n- Temps de premiere reponse : 1h15\n- Temps de resolution : en cours\n- Satisfaction client post-resolution : neutre\n- Escalade manager : non\n- Impact business estime : critique\n",
+  "extracted_fields": {
+    "date_creation": "2025-09-05",
+    "client": "BioPharm Sai-243",
+    "categorie_probleme": "qualite_produit",
+    "produit_concerne": "Produit Ser-21",
+    "severite": "moyenne",
+    "delai_resolution_jours": null,
+    "sentiment_client": "neutre",
+    "resume": "Le client BioPharm Sai-243 signale un defaut sur Produit Ser-21. Demande de remplacement ou avoir."
+  }
+}

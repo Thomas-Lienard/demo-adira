@@ -1,0 +1,23 @@
+{
+  "id": "TR-0001",
+  "type": "transcription",
+  "metadata": {
+    "date": "2025-08-24",
+    "commercial": "Marie Dubois",
+    "client": "MecaPrecision Gre-29",
+    "region": "Lyon"
+  },
+  "raw_text": "TRANSCRIPTION D'APPEL COMMERCIAL\n=================================\nDate : 2025-08-24\nCommercial : Marie Dubois\nClient : MecaPrecision Gre-29\nRegion : Lyon\nDuree : 27 minutes\n\n--- DEBUT DE TRANSCRIPTION ---\n\nMarie Dubois : Bonjour, c'est Marie Dubois de chez nous. Je vous appelle suite a notre dernier echange\nconcernant le renouvellement de votre contrat annuel. Comment allez-vous aujourd'hui ?\n\nMecaPrecision Gre-29 : Bonjour Marie. Ecoutez, justement je voulais vous en parler.\nOn a recu une proposition de NovaTech la semaine derniere et franchement,\nleurs conditions sont plus interessantes que les votres.\n\nMarie Dubois : Je comprends. Pouvez-vous me donner plus de details sur ce qu'ils proposent ?\n\nMecaPrecision Gre-29 : Alors principalement, delais de livraison inacceptables. Et puis il y a aussi le sujet des delais.\nOn a eu plusieurs retards ces derniers mois, et ca nous pose de vrais problemes en production.\nMon directeur des achats commence a perdre patience.\n\nMarie Dubois : Je comprends votre frustration et je prends note de ces points. Concernant les delais,\nnous avons mis en place un nouveau process de suivi logistique depuis le mois dernier qui devrait\nameliorer la situation. Pour les conditions tarifaires, je vais regarder ce qu'on peut faire.\nEst-ce que vous seriez disponible pour un rendez-vous la semaine prochaine ?\n\nMecaPrecision Gre-29 : Il faut que ce soit rapide parce qu'on a prevu de prendre une decision d'ici fin du mois.\nLe budget est deja arbitre, et si on ne voit pas d'amelioration concrete de votre cote, on partira\nchez NovaTech. C'est pas de gaite de coeur parce qu'on travaille ensemble depuis\n5 ans, mais la realite economique est ce qu'elle est.\n\nMarie Dubois : Je comprends parfaitement. Je vous envoie une proposition revisee d'ici jeudi, et on\nprogramme un point la semaine prochaine pour en discuter. Est-ce que mardi vous conviendrait ?\n\nMecaPrecision Gre-29 : Mardi apres-midi ca peut le faire. Mais venez avec du concret, pas juste un PowerPoint.\n\nMarie Dubois : Entendu. Merci pour votre franchise, MecaPrecision. A mardi.\n\n--- FIN DE TRANSCRIPTION ---\n\nNotes post-appel (Marie Dubois) :\n- Client en phase de comparaison active avec NovaTech\n- Objection principale : delais de livraison inacceptables\n- Risque de perte du compte : ELEVE\n- Action : cloture positive\n- Prochaine etape prevue : semaine prochaine\n\nContexte supplementaire :\nCe client represente un CA annuel d'environ 93K EUR. La perte de ce compte\naurait un impact significatif sur les objectifs de la region Lyon. Le commercial note que\nle ton du client s'est durci par rapport aux echanges precedents. La pression concurrentielle\nsur le segment ETI dans la region Lyon s'est\nintensifiee depuis le debut de l'annee, en particulier depuis que NovaTech\na lance sa nouvelle offre innovante.\n",
+  "extracted_fields": {
+    "date_appel": "2025-08-24",
+    "commercial": "Marie Dubois",
+    "client": "MecaPrecision Gre-29",
+    "duree_minutes": 27,
+    "concurrent_cite": "NovaTech",
+    "objection_principale": "delais de livraison inacceptables",
+    "sentiment": "negatif",
+    "signal_achat": false,
+    "prochaine_etape": "cloture positive",
+    "resume": "Le client MecaPrecision Gre-29 compare activement avec NovaTech. Objection principale : delais de livraison inacceptables."
+  }
+}

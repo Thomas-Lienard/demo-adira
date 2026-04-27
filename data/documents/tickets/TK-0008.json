@@ -1,0 +1,21 @@
+{
+  "id": "TK-0008",
+  "type": "ticket",
+  "metadata": {
+    "date": "2025-08-19",
+    "client": "GreenEnergy Sai-194",
+    "region": "Lyon",
+    "categorie": "retard_livraison"
+  },
+  "raw_text": "TICKET SERVICE CLIENT #0008\n=====================================\nDate d'ouverture : 2025-08-19\nClient : GreenEnergy Sai-194\nRegion : Lyon\nCategorie : retard_livraison\nSeverite : moyenne\nProduit concerne : Produit Log-27\n\n--- HISTORIQUE DU TICKET ---\n\n[2025-08-19 09:15] Client (GreenEnergy Sai-194) :\nBonjour, je vous contacte car nous avons un probleme urgent avec notre derniere livraison. La commande reference CMD-32792 devait etre livree il y a 6 jours et nous n'avons toujours rien recu. C'est la troisieme fois ce trimestre que ca arrive. Notre chaine de production est impactee et on a du retarder deux commandes client a cause de ca. C'est inacceptable.\n\n[2025-08-19 10:30] Support (Equipe SAV) :\nBonjour, nous avons bien recu votre demande et nous la traitons en priorite moyenne.\nNous avons contacte notre service logistique pour localiser votre colis et accelerer la livraison. Un point de situation vous sera communique sous 24h.\n\n[2025-08-21 14:22] Client (GreenEnergy Sai-194) :\nOK merci pour la prise en charge rapide. J'attends votre retour.\n\n[En cours] Ticket toujours ouvert.\n\n--- FIN DU TICKET ---\n\nMetriques internes :\n- Temps de premiere reponse : 1h15\n- Temps de resolution : en cours\n- Satisfaction client post-resolution : neutre\n- Escalade manager : non\n- Impact business estime : moyen\n",
+  "extracted_fields": {
+    "date_creation": "2025-08-19",
+    "client": "GreenEnergy Sai-194",
+    "categorie_probleme": "retard_livraison",
+    "produit_concerne": "Produit Log-27",
+    "severite": "moyenne",
+    "delai_resolution_jours": null,
+    "sentiment_client": "neutre",
+    "resume": "Commande livree avec 12 jours de retard. Le client GreenEnergy Sai-194 signale un impact sur sa production."
+  }
+}
