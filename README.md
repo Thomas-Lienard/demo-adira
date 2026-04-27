@@ -61,12 +61,17 @@ Creer un fichier `.env` a la racine :
 
 ```env
 ANTHROPIC_API_KEY=sk-ant-...
-# Optionnel
-ANTHROPIC_MODEL=claude-sonnet-4-20250514
-TRINO_HOST=trino.thelio.app
-TRINO_PORT=443
-TRINO_USER=prenom.nom
 ```
+
+Les autres parametres ont des valeurs par defaut dans le code et n'ont pas besoin d'etre configures :
+
+| Variable | Defaut | Description |
+|---|---|---|
+| `ANTHROPIC_MODEL` | `claude-sonnet-4-20250514` | Modele Claude a utiliser |
+| `TRINO_HOST` | `trino.thelio.app` | Hote du cluster Trino |
+| `TRINO_PORT` | `443` | Port Trino |
+| `TRINO_SCHEME` | `https` | Protocole de connexion |
+| `TRINO_USER` | `thomas.lienard` | Utilisateur Trino |
 
 ## Chargement des donnees
 
